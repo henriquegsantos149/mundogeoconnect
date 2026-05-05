@@ -70,4 +70,39 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(styleObj);
+
+    // 4. Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mainNav = document.querySelector('.main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            
+            // Change icon if needed
+            const icon = menuToggle.querySelector('i');
+            if (mainNav.classList.contains('active')) {
+                icon.className = 'ph ph-x';
+            } else {
+                icon.className = 'ph ph-list';
+            }
+        });
+
+        // Close menu when clicking a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                menuToggle.querySelector('i').className = 'ph ph-list';
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                menuToggle.querySelector('i').className = 'ph ph-list';
+            }
+        });
+    }
 });
