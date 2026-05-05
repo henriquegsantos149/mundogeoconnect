@@ -19,20 +19,78 @@
     
     <!-- Phosphor Icons para ícones modernos e limpos -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+    /* TIMELINE (Curriculum) RESTRUCTURE */
+    .timeline {
+        position: relative;
+        padding-left: 3rem;
+        margin-top: 3rem;
+    }
+
+    .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0; top: 0;
+        width: 2px; height: 100%;
+        background: var(--gradient-brand);
+    }
+
+    .tl-item {
+        position: relative;
+        margin-bottom: 1.5rem;
+        padding: 1.5rem 2rem;
+        transition: transform 0.3s;
+    }
+
+    .tl-item:hover {
+        transform: translateX(10px);
+    }
+
+    .tl-dot {
+        position: absolute;
+        left: -3.5rem; top: 50%;
+        width: 12px; height: 12px;
+        background: var(--clr-green-1);
+        border: 2px solid var(--clr-black);
+        border-radius: 50%;
+        transform: translateY(-50%);
+    }
+
+
+    .tl-item strong {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 1.1rem;
+        color: #fff;
+        margin-bottom: 0.2rem;
+    }
+
+    .tl-item span {
+        font-size: 0.85rem;
+        color: var(--clr-gray);
+    }
+
+    .how-it-works {
+        padding: 3rem;
+        text-align: left;
+    }
+
+    .how-it-works h3 { font-size: 1.8rem; margin-bottom: 1rem; color: var(--clr-green-1); }
+    </style>
 </head>
 <body>
 
     <!-- Background Grid Global -->
-    <div class="global-grid"></div>
+    <div class="global-grid">
+    </div>
 
     <!-- HEADER / NAVIGATION -->
     <header class="main-header">
         <div class="container header-container">
             <div class="logo">
-                <!-- Logotipo simulado da Ambiental Pro (Horizontal) -->
                 <div class="logo-horizontal">
-                    <span class="logo-a">A</span>
-                    <span class="logo-text">Ambiental Pro</span>
+                    <img src="logo-ambientalpro.png" alt="Ambiental Pro">
                 </div>
             </div>
             <nav class="main-nav">
@@ -42,156 +100,230 @@
                 <a href="#faq">FAQ</a>
             </nav>
             <div class="header-cta">
-                <a href="#cta" class="btn btn-outline">Falar com Especialista</a>
+                <a href="#cta" class="btn btn-outline shape-brand">Especialista</a>
             </div>
         </div>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero" id="inicio">
-        <!-- Linhas laterais decorativas -->
-        <div class="decor-line left"></div>
-        <div class="decor-line right"></div>
         
-        <div class="container hero-content">
-            <div class="hero-event-badge">
-                <i class="ph ph-map-pin"></i> MundoGEO Connect 2026
-            </div>
-            
-            <h1 class="hero-title">
-                Você veio ver o <span>futuro</span> das geotecnologias.<br>
-                Agora posicione-se para atuar nele.
-            </h1>
-            
-            <div class="hero-subtitle">
-                <strong>Pós-Graduação em Georreferenciamento, Geoprocessamento e Sensoriamento Remoto</strong>
-            </div>
-            
-            <p class="hero-text">
-                Se o seu objetivo é sair do interesse técnico e entrar em um nível de atuação mais estratégico, mais valorizado e mais consistente no mercado, esta especialização foi feita para isso.
-            </p>
-            
-            <div class="hero-event-info">
-                <div class="event-detail">
-                    <i class="ph ph-calendar-blank"></i>
-                    <span>16 a 18 de Junho de 2026</span>
+        <div class="container hero-grid">
+            <div class="hero-main-content">
+                <div class="hero-event-badge shape-brand">
+                    <i class="ph ph-map-pin"></i> MundoGEO Connect 2026
                 </div>
-                <div class="event-detail">
-                    <i class="ph ph-buildings"></i>
-                    <span>Expo Center Norte, Pavilhão Azul, São Paulo – SP</span>
+                
+                <h1 class="hero-title">
+                    Você veio ver o <span class="text-highlight">futuro</span> das geotecnologias.
+                    Agora posicione-se para atuar nele.
+                </h1>
+                
+                <div class="hero-meta">
+                    <div class="hero-subtitle">
+                        <strong>Pós-Graduação em Georreferenciamento, Geoprocessamento e Sensoriamento Remoto</strong>
+                    </div>
+                    
+                    <p class="hero-text">
+                        Se o seu objetivo é sair do interesse técnico e entrar em um nível de atuação mais estratégico, mais valorizado e mais consistente no mercado, esta especialização foi feita para isso.
+                    </p>
+                    
+                    <div class="hero-ctas">
+                        <a href="#cta" class="btn btn-primary shape-brand">Quero conhecer a pós</a>
+                        <a href="https://wa.me/551100000000" class="btn btn-secondary shape-brand-alt">Falar com a equipe</a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="hero-ctas">
-                <a href="#cta" class="btn btn-primary">Quero conhecer a pós</a>
-                <a href="https://wa.me/551100000000" class="btn btn-secondary">Quero falar com a equipe</a>
+
+            <!-- Overlapping Visual Layer -->
+            <div class="hero-visual-layer shape-brand card-overlay layer-2">
+                <div class="event-details-box">
+                    <div class="event-detail">
+                        <i class="ph ph-calendar-blank"></i>
+                        <div>
+                            <strong>16 a 18 de Junho</strong>
+                            <span>2026 | 9h às 19h</span>
+                        </div>
+                    </div>
+                    <div class="event-detail">
+                        <i class="ph ph-buildings"></i>
+                        <div>
+                            <strong>Expo Center Norte</strong>
+                            <span>Pavilhão Azul, São Paulo</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        
-        <!-- Elemento flutuante de mapa/dados -->
-        <div class="hero-visual-layer"></div>
     </section>
 
     <!-- AUTORIDADE / O PRÓXIMO PASSO -->
-    <section class="authority-section" id="posicionamento">
-        <div class="container">
-            <div class="two-columns">
-                <div class="auth-text">
-                    <h2 class="section-title">O próximo passo para quem quer transformar conhecimento em <span>autoridade técnica</span></h2>
-                    <p>No setor ambiental e territorial, não basta conhecer ferramentas. O mercado valoriza quem consegue unir leitura espacial, domínio técnico, base cartográfica, entendimento normativo e capacidade real de entrega.</p>
-                    <p>A Pós-GGSR da Ambiental Pro foi estruturada para formar profissionais capazes de atuar com mais segurança em georreferenciamento, geoprocessamento e sensoriamento remoto, conectando técnica, aplicação e contexto legal.</p>
+    <section class="auth-section section-light" id="autoridade">
+        <div class="container text-center">
+            <div class="auth-text" style="max-width: 800px; margin: 0 auto 3rem auto;">
+                <h2 class="section-title">O próximo passo para quem quer transformar conhecimento em <span class="text-highlight">autoridade técnica</span></h2>
+                <p>No setor ambiental e territorial, não basta conhecer ferramentas. O mercado valoriza quem consegue unir leitura espacial, domínio técnico, base cartográfica, entendimento normativo e capacidade real de entrega.</p>
+                <p>A Pós-GGSR da Ambiental Pro foi estruturada para formar profissionais capazes de atuar com mais segurança em georreferenciamento, geoprocessamento e sensoriamento remoto, conectando técnica, aplicação e contexto legal.</p>
+            </div>
+            <div class="auth-badges" style="flex-direction: row; justify-content: center; flex-wrap: wrap;">
+                <div class="badge-card shape-brand layer-1 card-overlay">
+                    <i class="ph ph-chalkboard-teacher"></i>
+                    <div class="badge-info text-left" style="text-align: left;">
+                        <strong>100% EAD</strong>
+                        <span>Aulas online práticas</span>
+                    </div>
                 </div>
-                <div class="auth-badges">
-                    <div class="badge-card shape-brand">
-                        <i class="ph ph-chalkboard-teacher"></i>
-                        <div class="badge-info">
-                            <strong>100% EAD</strong>
-                            <span>Aulas online práticas</span>
-                        </div>
+                <div class="badge-card shape-brand-alt layer-2 card-overlay">
+                    <i class="ph ph-clock"></i>
+                    <div class="badge-info text-left" style="text-align: left;">
+                        <strong>440 Horas</strong>
+                        <span>Duração de 12 meses</span>
                     </div>
-                    <div class="badge-card shape-brand">
-                        <i class="ph ph-clock"></i>
-                        <div class="badge-info">
-                            <strong>440 Horas</strong>
-                            <span>Duração de 12 meses</span>
-                        </div>
-                    </div>
-                    <div class="badge-card shape-brand">
-                        <i class="ph ph-certificate"></i>
-                        <div class="badge-info">
-                            <strong>MEC & CONFEA</strong>
-                            <span>Anhanguera e DN 116</span>
-                        </div>
+                </div>
+                <div class="badge-card shape-brand layer-1 card-overlay">
+                    <i class="ph ph-certificate"></i>
+                    <div class="badge-info text-left" style="text-align: left;">
+                        <strong>MEC & CONFEA</strong>
+                        <span>Anhanguera e DN 116</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- TRANSFORMAÇÃO -->
+    <!-- O EVENTO MUNDOGEO 2026 -->
+    <section class="event-details-section" id="o-evento">
+        <div class="container">
+            <div class="two-columns">
+                <div class="event-main-info">
+                    <h2 class="section-title">O Ecossistema <span class="text-highlight">MundoGEO 2026</span></h2>
+                    <p class="mb-5">O propósito do evento MundoGEO Connect 2026 é reunir nos 14.000 m² do Expo Center Norte as mentes e empresas que lideram a inteligência geográfica, geomática e captura da realidade.</p>
+                    
+                    <div class="event-feature-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem;">
+                        <div class="event-feature-item">
+                            <h4 class="font-outfit" style="color: var(--clr-green-1); margin-bottom: 0.5rem;"><i class="ph ph-rocket-launch"></i> Captura & IA</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Satélites, aviões, drones e processamento de imagens via Inteligência Artificial.</p>
+                        </div>
+                        <div class="event-feature-item">
+                            <h4 class="font-outfit" style="color: var(--clr-blue); margin-bottom: 0.5rem;"><i class="ph ph-cube"></i> Recursos 3D</h4>
+                            <p style="font-size: 0.9rem; opacity: 0.8;">Análise de informações estratégicas usando BIM e Gêmeos Digitais (Digital Twins).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="event-synergy-box shape-brand layer-2 card-overlay" style="padding: 2.5rem;">
+                    <h3 class="font-outfit" style="margin-bottom: 1.5rem;"><span class="text-gradient">Eventos Simultâneos</span></h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 1.5rem; opacity: 0.9;">De forma simultânea, acontecem outros três eventos com grande sinergia tecnológica no mesmo local:</p>
+                    
+                    <ul class="custom-bullets" style="display: flex; flex-direction: column; gap: 1rem;">
+                        <li style="font-size: 0.9rem;"><strong>DroneShow Robotics:</strong> Tudo sobre o universo dos drones e robótica.</li>
+                        <li style="font-size: 0.9rem;"><strong>SpaceBR Show:</strong> Cadeia produtiva e soluções que vêm do espaço.</li>
+                        <li style="font-size: 0.9rem;"><strong>Expo eVTOL:</strong> O futuro da Mobilidade Aérea Avançada.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="event-sectors mt-5" style="background: rgba(255,255,255,0.03); padding: 3rem; border-radius: var(--radius-brand);">
+                <h4 class="text-center font-outfit mb-5" style="text-transform: uppercase; letter-spacing: 2px;">Soluções e Tecnologias para:</h4>
+                <div class="sectors-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                    <span class="sector-tag">Agricultura</span>
+                    <span class="sector-tag">Florestas</span>
+                    <span class="sector-tag">Meio Ambiente</span>
+                    <span class="sector-tag">Cidades Inteligentes</span>
+                    <span class="sector-tag">Logística</span>
+                    <span class="sector-tag">Defesa</span>
+                    <span class="sector-tag">Energia</span>
+                    <span class="sector-tag">Rodovias</span>
+                    <span class="sector-tag">Ferrovias</span>
+                    <span class="sector-tag">Portos</span>
+                    <span class="sector-tag">Aeroportos</span>
+                    <span class="sector-tag">Mineração</span>
+                    <span class="sector-tag">Óleo & Gás</span>
+                    <span class="sector-tag">Segurança</span>
+                    <span class="sector-tag">Telecomunicações</span>
+                    <span class="sector-tag">Construção Civil</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- TRANSFORMAÇÃO (BENTO BOX) -->
     <section class="transformation-section" id="transformacao">
         <div class="container">
-            <h2 class="section-title text-center">O que você <span>passa a construir</span> com essa formação</h2>
+            <h2 class="section-title text-center">O que você <span class="text-highlight">passa a construir</span> com essa formação</h2>
             
-            <div class="benefits-grid">
-                <div class="benefit-card shape-brand">
-                    <div class="b-icon"><i class="ph ph-shield-check"></i></div>
-                    <h3>Segurança Profissional</h3>
-                    <p>Mais segurança para atuar com geotecnologias de forma profissional.</p>
+            <div class="bento-grid">
+                <!-- Card 1: Wide & High -->
+                <div class="bento-item shape-brand layer-2 card-overlay">
+                    <img src="assets/bento_seguranca_real.jpg" alt="Segurança Profissional" class="b-image">
+                    <div class="bento-content">
+                        <h3>Segurança Profissional</h3>
+                        <p>Mais segurança para atuar com geotecnologias de forma profissional, dominando as normas técnicas e legislação vigente.</p>
+                    </div>
                 </div>
-                <div class="benefit-card shape-brand">
-                    <div class="b-icon"><i class="ph ph-compass"></i></div>
-                    <h3>Base Técnica Sólida</h3>
-                    <p>Base técnica para trabalhar com cartografia, geodésia, topografia e agrimensura legal.</p>
+
+                <!-- Card 2: Small -->
+                <div class="bento-item shape-brand-alt layer-1 card-overlay">
+                    <img src="assets/bento_base_user.jpg" alt="Base Sólida" class="b-image">
+                    <div class="bento-content">
+                        <h3>Base Sólida</h3>
+                        <p>Trabalhe com cartografia, geodésia e topografia legal.</p>
+                    </div>
                 </div>
-                <div class="benefit-card shape-brand">
-                    <div class="b-icon"><i class="ph ph-git-branch"></i></div>
-                    <h3>Dados em Valor</h3>
-                    <p>Capacidade de interpretar, processar e transformar dados espaciais em entregáveis de valor.</p>
+
+                <!-- Card 3: Small -->
+                <div class="bento-item shape-brand layer-1 card-overlay">
+                    <img src="assets/bento_dados_user.jpg" alt="Dados em Valor" class="b-image">
+                    <div class="bento-content">
+                        <h3>Dados em Valor</h3>
+                        <p>Transforme dados espaciais em entregáveis estratégicos.</p>
+                    </div>
                 </div>
-                <div class="benefit-card shape-brand">
-                    <div class="b-icon"><i class="ph ph-chart-polar"></i></div>
-                    <h3>Dashboards e Mapas</h3>
-                    <p>Competência para estruturar mapas, análises espaciais, bancos de dados e dashboards.</p>
+
+                <!-- Card 4: Wide -->
+                <div class="bento-item shape-brand-alt layer-2 card-overlay">
+                    <img src="assets/bento_dashboard_user.jpg" alt="Dashboards e Mapas" class="b-image">
+                    <div class="bento-content">
+                        <h3>Dashboards e Mapas</h3>
+                        <p>Estrutura de análises espaciais avançadas e visualização de dados dinâmica.</p>
+                    </div>
                 </div>
-                <div class="benefit-card shape-brand wide">
-                    <div class="b-icon"><i class="ph ph-briefcase"></i></div>
-                    <h3>Formação Robusta para Consultorias</h3>
-                    <p>Atuação de alta qualidade em consultorias, projetos territoriais, perícias e demandas ambientais que exigem leitura espacial qualificada.</p>
+
+                <!-- Card 5: Large Horizontal -->
+                <div class="bento-item shape-brand layer-1 card-overlay">
+                    <img src="assets/bento_consultoria_v2.jpg" alt="Formação Robusta para Consultorias" class="b-image">
+                    <div class="bento-content">
+                        <h3>Formação Robusta para Consultorias</h3>
+                        <p>Atuação de alta qualidade em consultorias, projetos territoriais, perícias e demandas ambientais.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- MOTIVAÇÃO -->
-    <section class="motivation-section">
+    <section class="why-section section-light" id="por-que">
         <div class="container">
             <div class="two-columns inverse">
                 <div class="mot-content">
-                    <h2 class="section-title">Por que essa pós faz tanto sentido para quem está no <span>MundoGEO Connect?</span></h2>
-                    <p class="highlight-p">Porque o evento mostra para onde o setor está indo.</p>
+                    <h2 class="section-title">Por que essa pós faz sentido para quem está no <span class="text-highlight">MundoGEO?</span></h2>
+                    <p class="highlight-p">O evento mostra para onde o setor está indo. <br>Nós mostramos como você lidera esse movimento.</p>
                     <p>A GGSR mostra como você pode se preparar para atuar dentro desse movimento com mais profundidade técnica e com uma formação pensada para demandas reais do mercado.</p>
                     <ul class="comparison-list">
                         <li>
-                            <i class="ph ph-x-circle text-gray"></i>
-                            <span>Enquanto muita gente sai do evento apenas com referências, você sai com uma <strong>rota concreta de especialização.</strong></span>
+                            <i class="ph ph-circle-dashed text-gradient"></i>
+                            <span>Enquanto muitos saem do evento apenas com referências, você sai com uma <strong>rota concreta de especialização.</strong></span>
                         </li>
                         <li>
                             <i class="ph ph-check-circle text-gradient"></i>
-                            <span>Enquanto muita gente observa a evolução das geotecnologias, você se coloca em posição de <strong>aplicar essas tecnologias com confiança.</strong></span>
+                            <span>Enquanto muitos observam a evolução, você se coloca em posição de <strong>aplicar tecnologias com confiança.</strong></span>
                         </li>
                     </ul>
                 </div>
-                <div class="mot-image shape-brand">
+                <div class="mot-image shape-brand layer-2 card-overlay">
+                    <img src="mundogeo-2024.jpg" alt="MundoGEO 2024 Logo" class="event-logo-img">
                     <div class="overlay-gradient"></div>
-                    <div class="fake-interface">
-                        <div class="fi-header"><span></span><span></span><span></span></div>
-                        <div class="fi-body">
-                            <div class="fi-layer l1"></div>
-                            <div class="fi-layer l2"></div>
-                            <div class="fi-layer l3"></div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -201,60 +333,56 @@
     <section class="curriculum-section" id="matriz">
         <div class="container max-narrow">
             <div class="text-center mb-5">
-                <h2 class="section-title">Você não vai estudar <span>apenas software</span></h2>
-                <p>Você vai desenvolver um raciocínio técnico mais completo para entender o território, tratar dados espaciais com mais critério e transformar informação geográfica em decisão.</p>
+                <h2 class="section-title">Você não vai estudar <span class="text-highlight">apenas software</span></h2>
+                <p>Desenvolva um raciocínio técnico completo para entender o território, tratar dados espaciais com critério e transformar informação geográfica em decisão estratégica.</p>
             </div>
             
             <div class="timeline">
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Geotecnologias aplicadas</strong>
                     <span>à área ambiental</span>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand-alt card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Sensoriamento Remoto</strong>
                     <span>e Processamento Digital de Imagens</span>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Cartografia</strong>
                     <span>Fundamentos, Técnicas e Ferramentas</span>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand-alt card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Referência Espacial e Geodésia</strong>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Topografia e Agrimensura Legal</strong>
                     <span>Topografia aplicada ao georreferenciamento e agrimensura</span>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand-alt card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Dados e Tecnologia</strong>
-                    <span>Programação para Ciência de Dados Ambientais, Bancos de Dados e Big Data</span>
+                    <span>Programação, Bancos de Dados e Big Data</span>
                 </div>
-                <div class="tl-item">
+                <div class="tl-item layer-1 shape-brand card-overlay">
                     <div class="tl-dot"></div>
                     <strong>Visualização e Gestão</strong>
-                    <span>WebMaps, Dashboards e Gerenciamento Estratégico de Projetos</span>
-                </div>
-                <div class="tl-item">
-                    <div class="tl-dot"></div>
-                    <strong>Perícia Ambiental</strong>
+                    <span>WebMaps, Dashboards e Projetos Estratégicos</span>
                 </div>
             </div>
 
-            <div class="how-it-works shape-brand-alt mt-5">
+            <div class="how-it-works shape-brand layer-2 card-overlay mt-5">
                 <h3 class="font-outfit"><i class="ph ph-laptop"></i> Como a formação funciona</h3>
-                <p>A especialização acontece em ambiente virtual de aprendizagem, com aulas assíncronas, videoaulas, material escrito autoral, leituras complementares, estudos de caso e exercícios práticos com softwares de geoprocessamento. A avaliação exige nota mínima 7,0 e frequência de 75%.</p>
+                <p>Especialização 100% EAD em ambiente virtual, com aulas assíncronas, material autoral e exercícios práticos. A avaliação exige nota mínima 7,0 e frequência de 75%.</p>
             </div>
         </div>
     </section>
 
     <!-- O QUE OFERECEMOS / MUDANÇA -->
-    <section class="offer-section">
+    <section class="offer-section section-light">
         <div class="container container-flex">
             <div class="offer-box shape-brand">
                 <h3 class="font-outfit text-gradient mb-3">O que oferecemos:</h3>
@@ -272,7 +400,8 @@
                     <div class="step">Você deixa de olhar para mapas apenas como apoio operacional.</div>
                     <div class="step">Passa a enxergar o território com mais precisão e base técnica.</div>
                     <div class="step">Passa a conectar coleta, processamento, interpretação e visualização com clareza.</div>
-                    <div class="step text-gradient font-bold">Constrói entregas que elevam seu posicionamento. Em um mercado de ferramentas, dominar o contexto é o diferencial.</div>
+                    <div class="step">Constrói entregas que elevam seu posicionamento. Em um mercado de ferramentas, dominar o contexto é o diferencial.</div>
+
                 </div>
             </div>
         </div>
@@ -281,85 +410,89 @@
     <!-- PROFESSORES / CREDIBILIDADE -->
     <section class="faculty-section" id="docentes">
         <div class="container text-center">
-            <h2 class="section-title">Credibilidade que sustenta a formação</h2>
+            <h2 class="section-title">Credibilidade que <span class="text-highlight">sustenta</span> a formação</h2>
             <p class="max-narrow mx-auto mb-5">Homologação com a Universidade Anhanguera (MEC) e base legal associada à Decisão Normativa 116 do CONFEA. Um corpo docente de especialistas do mercado prático.</p>
             
             <div class="faculty-grid">
-                <!-- Profs -->
-                <div class="prof-card shape-brand">
-                    <div class="prof-img"><i class="ph ph-user"></i></div>
+                <div class="prof-card shape-brand layer-1 card-overlay">
+                    <div class="prof-img"><img src="faculty/henrique.png" alt="Henrique Gonzalez"></div>
                     <h4>Henrique Gonzalez</h4>
-                    <span>Especialista</span>
+                    <span class="prof-title">Engenheiro Ambiental (UFRJ)</span>
+                    <p class="prof-desc">Experiência sólida na área ambiental, focado em geoprocessamento e soluções tecnológicas.</p>
                 </div>
-                <div class="prof-card shape-brand">
-                    <div class="prof-img"><i class="ph ph-user"></i></div>
+                <div class="prof-card shape-brand-alt layer-2 card-overlay">
+                    <div class="prof-img"><img src="faculty/raquel.png" alt="Raquel C. Melillo"></div>
                     <h4>Raquel C. Melillo</h4>
-                    <span>Especialista</span>
+                    <span class="prof-title">Doutora em Ambiente e Sociedade (UNICAMP)</span>
+                    <p class="prof-desc">Pesquisadora com vasta contribuição para estudos de impacto ambiental e sustentabilidade.</p>
                 </div>
-                <div class="prof-card shape-brand">
-                    <div class="prof-img"><i class="ph ph-user"></i></div>
+                <div class="prof-card shape-brand layer-1 card-overlay">
+                    <div class="prof-img"><img src="faculty/rodolfo.png" alt="Rodolfo Finatti"></div>
                     <h4>Rodolfo Finatti</h4>
-                    <span>Especialista</span>
+                    <span class="prof-title">Geógrafo (UNESP), PhD em Geografia (USP)</span>
+                    <p class="prof-desc">Especialista com profunda bagagem acadêmica e prática na formulação de mapas.</p>
                 </div>
-                <div class="prof-card shape-brand">
-                    <div class="prof-img"><i class="ph ph-user"></i></div>
+                <div class="prof-card shape-brand-alt layer-2 card-overlay">
+                    <div class="prof-img"><img src="faculty/vitor.png" alt="Vitor do Sacramento"></div>
                     <h4>Vitor do Sacramento</h4>
-                    <span>Especialista</span>
+                    <span class="prof-title">Geólogo (UNB) com MBA</span>
+                    <p class="prof-desc">Combina conhecimento profundo do solo com gestão estratégica em geotecnologias.</p>
                 </div>
-                <div class="prof-card shape-brand">
-                    <div class="prof-img"><i class="ph ph-user"></i></div>
+                <div class="prof-card shape-brand layer-1 card-overlay">
+                    <div class="prof-img"><img src="faculty/luis.png" alt="Luís Antônio Soares"></div>
                     <h4>Luís Antônio Soares</h4>
-                    <span>Especialista</span>
+                    <span class="prof-title">Engenheiro Agrimensor (UFU)</span>
+                    <p class="prof-desc">Experiência de campo em demarcações e georreferenciamento de imóveis rurais.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FAQ -->
-    <section class="faq-section" id="faq">
+    <section class="faq-section section-light" id="faq">
         <div class="container max-narrow">
-            <h2 class="section-title text-center">Perguntas <span>frequentes</span></h2>
+            <h2 class="section-title text-center">Perguntas <span class="text-highlight">frequentes</span></h2>
             
             <div class="faq-list">
-                <div class="faq-item">
+                <div class="faq-item layer-1 shape-brand card-overlay">
                     <div class="faq-q">A pós é reconhecida pelo MEC? <i class="ph ph-caret-down"></i></div>
                     <div class="faq-a">Sim. A homologação é feita em conjunto com a Universidade Anhanguera.</div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item layer-1 shape-brand-alt card-overlay">
                     <div class="faq-q">A formação é presencial ou online? <i class="ph ph-caret-down"></i></div>
                     <div class="faq-a">A formação é 100% EAD.</div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item layer-1 shape-brand card-overlay">
                     <div class="faq-q">Qual é a duração do curso e a carga horária? <i class="ph ph-caret-down"></i></div>
                     <div class="faq-a">A duração é de 12 meses, com carga horária total de 440 horas.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-q">Preciso ter graduação para ingressar? <i class="ph ph-caret-down"></i></div>
-                    <div class="faq-a">Sim. O pré-requisito é ensino superior completo. Esta pós é indicada para profissionais da área ambiental e correlatas.</div>
+                <div class="faq-item layer-1 shape-brand-alt card-overlay">
+                    <div class="faq-q">Quem pode cursar esta pós-graduação? <i class="ph ph-caret-down"></i></div>
+                    <div class="faq-a">Profissionais graduados em Engenharia, Geografia, Agronomia, Biologia, Gestão Ambiental e áreas correlatas que buscam especialização técnica e legal.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-q">O curso aborda georreferenciamento de forma ampla? <i class="ph ph-caret-down"></i></div>
-                    <div class="faq-a">Sim. A matriz inclui, entre outros temas, referência espacial e geodésia, topografia aplicada ao georreferenciamento, agrimensura legal, cartografia e sensoriamento remoto.</div>
+                <div class="faq-item layer-1 shape-brand card-overlay">
+                    <div class="faq-q">Quais softwares e ferramentas vou aprender a dominar? <i class="ph ph-caret-down"></i></div>
+                    <div class="faq-a">A formação foca nas ferramentas líderes do mercado, como QGIS e ArcGIS para SIG, além de softwares específicos para processamento de imagens de drones (como Agisoft Metashape) e análise de dados espaciais via Python.</div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-q">O curso também aborda programação e visualização de dados? <i class="ph ph-caret-down"></i></div>
-                    <div class="faq-a">Sim. A formação inclui Fundamentos de Programação para Ciência de Dados Ambientais, Gerenciamento de Bancos de Dados e Big Data e WebMaps e Dashboards.</div>
+
+                <div class="faq-item layer-1 shape-brand-alt card-overlay">
+                    <div class="faq-q">Terei acesso a algum networking com empresas? <i class="ph ph-caret-down"></i></div>
+                    <div class="faq-a">Sim. Todos os alunos têm acesso ao HUB Ambiental Pro, uma plataforma exclusiva que conecta nossos especialistas com as principais demandas do mercado e empresas parceiras.</div>
                 </div>
+
             </div>
         </div>
     </section>
 
     <!-- CTA FINAL -->
-    <section class="final-cta" id="cta">
-        <div class="decor-line left"></div>
-        <div class="decor-line right"></div>
-        <div class="container text-center max-narrow">
-            <h2 class="section-title font-bebas big-title">Participar do evento amplia visão. <br><span class="text-gradient">Se especializar amplia posição.</span></h2>
-            <p class="mb-5">A Pós em Georreferenciamento, Geoprocessamento e Sensoriamento Remoto é a escolha para quem quer transformar interesse técnico em competência aplicada, e competência aplicada em vantagem profissional.</p>
+    <section class="final-cta-section" id="cta">
+        <div class="container max-narrow text-center">
+            <h2 class="section-title big-title">Participar do evento amplia visão. <br><span class="text-highlight">Se especializar amplia posição.</span></h2>
+            <p class="mb-5">A Pós em Georreferenciamento, Geoprocessamento e Sensoriamento Remoto é a escolha para quem quer transformar interesse técnico em competência aplicada.</p>
             
             <div class="cta-actions">
-                <a href="https://wa.me/551100000000" class="btn btn-primary btn-large">Quero falar com um especialista</a>
-                <a href="#form" class="btn btn-outline btn-large">Quero receber mais informações</a>
+                <a href="https://wa.me/551100000000" class="btn btn-primary btn-large shape-brand">Falar com especialista</a>
+                <a href="#form" class="btn btn-outline btn-large shape-brand-alt">Receber informações</a>
             </div>
         </div>
     </section>
@@ -369,8 +502,7 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <div class="logo-horizontal">
-                    <span class="logo-a">A</span>
-                    <span class="logo-text">Ambiental Pro</span>
+                    <img src="logo-ambientalpro.png" alt="Ambiental Pro">
                 </div>
                 <p>Ecossistema que transforma conhecimento em diferencial competitivo e conexões em negócios estratégicos.</p>
             </div>
