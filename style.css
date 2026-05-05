@@ -280,6 +280,16 @@ section {
     width: auto;
 }
 
+.logo {
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
 .sector-tag {
     background: rgba(49, 168, 168, 0.1);
     color: var(--clr-blue);
@@ -404,6 +414,9 @@ section {
     margin-bottom: 2rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    max-width: 100%;
+    line-height: 1.4;
+    text-align: left;
 }
 
 .hero-subtitle {
@@ -997,10 +1010,15 @@ section {
     .main-nav.active {
         right: 0 !important;
         box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 
     .main-nav a {
-        font-size: 1.5rem;
+        display: block !important;
+        color: var(--clr-light) !important;
+        font-size: 1.5rem !important;
         font-weight: 700;
         margin: 0;
         width: 100%;
@@ -1008,6 +1026,7 @@ section {
         padding: 1rem;
         border-radius: var(--radius-btn);
         transition: all 0.3s;
+        text-decoration: none;
     }
 
     .main-nav a:hover {
