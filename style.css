@@ -804,7 +804,7 @@ section {
 }
 
 .custom-bullets li::before {
-    content: 'â†’';
+    content: '→';
     position: absolute;
     left: 0;
     color: var(--clr-green);
@@ -1398,17 +1398,17 @@ section {
     }
 }
 
-/* OtimizaÃ§Ã£o de Imagens Globais */
+/* Otimização de Imagens Globais */
 img {
     max-width: 100%;
     height: auto;
 }
 
 /* ==========================================================================
-   NOVAS SEÃ‡Ã•ES (APLICAÃ‡Ã•ES, PÃšBLICO ALVO, CURSO, DEPOIMENTOS)
+   NOVAS SEÇÕES (APLICAÇÕES, PÚBLICO ALVO, CURSO, DEPOIMENTOS)
    ========================================================================== */
 
-/* APLICAÃ‡Ã•ES PRÃTICAS */
+/* APLICAÇÕES PRÁTICAS */
 .practical-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1476,7 +1476,7 @@ img {
     line-height: 1.6;
 }
 
-/* PÃšBLICO ALVO */
+/* PÚBLICO ALVO */
 .target-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1828,7 +1828,7 @@ img {
     border-radius: 4px;
 }
 
-/* MODIFICAÃ‡Ã•ES RESPONSIVAS */
+/* MODIFICAÇÕES RESPONSIVAS */
 @media (max-width: 1024px) {
     .course-info-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2147,7 +2147,7 @@ img {
 
 
 /* ==========================================================================
-   AUTORIDADE / MOTIVAÃ‡ÃƒO
+   AUTORIDADE / MOTIVAÇÃO
    ========================================================================== */
 .auth-section p,
 .why-section p {
@@ -2218,7 +2218,7 @@ img {
 }
 
 /* ==========================================================================
-   HABILIDADES / TRANSFORMAÃ‡ÃƒO
+   HABILIDADES / TRANSFORMAÇÃO
    ========================================================================== */
 .transformation-section {
     padding: 6rem 0;
@@ -2285,7 +2285,7 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER - BOTÃ•ES E MOBILE
+   TESTIMONIALS SLIDER - BOTÕES E MOBILE
    ========================================================================== */
 .testi-slide.hidden {
     opacity: 0;
