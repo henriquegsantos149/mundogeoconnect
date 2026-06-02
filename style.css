@@ -804,7 +804,7 @@ section {
 }
 
 .custom-bullets li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--clr-green);
@@ -900,6 +900,12 @@ section {
 /* FAQ */
 .faq-list {
     margin-top: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .faq-item {
@@ -908,6 +914,15 @@ section {
     border-radius: var(--radius-brand);
     border: 1px solid rgba(255, 255, 255, 0.05);
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    border-color: rgba(49, 168, 168, 0.3);
+}
+
+.faq-item.active {
+    border-color: rgba(49, 168, 168, 0.5);
 }
 
 .faq-q {
@@ -923,12 +938,12 @@ section {
 }
 
 .faq-q i {
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
+    color: var(--clr-green);
 }
 
-.faq-q.active i {
+.faq-item.active .faq-q i {
     transform: rotate(180deg);
-    color: var(--clr-green);
 }
 
 .faq-a {
@@ -937,11 +952,14 @@ section {
     overflow: hidden;
     transition: all 0.3s ease;
     opacity: 0;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .faq-item.active .faq-a {
     padding: 1.5rem 2rem;
-    max-height: 200px;
+    max-height: 500px;
     opacity: 1;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -1021,12 +1039,26 @@ section {
 
 .section-light .card-overlay,
 .section-light .badge-card,
-.section-light .offer-box,
-.section-light .faq-item {
+.section-light .offer-box {
     background-color: #fff;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05),
         inset 0 0 0 1px rgba(111, 176, 58, 0.2);
     border: none;
+}
+
+.section-light .faq-item {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.section-light .faq-item:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-color: rgba(49, 168, 168, 0.3);
+}
+
+.section-light .faq-item.active {
+    border-color: rgba(49, 168, 168, 0.5);
 }
 
 .event-photo {
@@ -1038,6 +1070,11 @@ section {
 
 .section-light .faq-q {
     background: rgba(0, 0, 0, 0.02);
+    color: var(--clr-dark-1);
+}
+
+.section-light .faq-a {
+    color: var(--clr-dark-1);
 }
 
 .section-light .faq-item.active .faq-a {
@@ -1361,17 +1398,17 @@ section {
     }
 }
 
-/* Otimização de Imagens Globais */
+/* OtimizaÃ§Ã£o de Imagens Globais */
 img {
     max-width: 100%;
     height: auto;
 }
 
 /* ==========================================================================
-   NOVAS SEÇÕES (APLICAÇÕES, PÚBLICO ALVO, CURSO, DEPOIMENTOS)
+   NOVAS SEÃ‡Ã•ES (APLICAÃ‡Ã•ES, PÃšBLICO ALVO, CURSO, DEPOIMENTOS)
    ========================================================================== */
 
-/* APLICAÇÕES PRÁTICAS */
+/* APLICAÃ‡Ã•ES PRÃTICAS */
 .practical-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1439,7 +1476,7 @@ img {
     line-height: 1.6;
 }
 
-/* PÚBLICO ALVO */
+/* PÃšBLICO ALVO */
 .target-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1791,7 +1828,7 @@ img {
     border-radius: 4px;
 }
 
-/* MODIFICAÇÕES RESPONSIVAS */
+/* MODIFICAÃ‡Ã•ES RESPONSIVAS */
 @media (max-width: 1024px) {
     .course-info-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -2107,67 +2144,10 @@ img {
 /* ==========================================================================
    FAQ
    ========================================================================== */
-.faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
-.faq-item {
-    background: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: var(--radius-brand);
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
-}
-
-.faq-item:hover {
-    border-color: rgba(49, 168, 168, 0.3);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-}
-
-.faq-q {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--clr-dark-1);
-}
-
-.faq-q i {
-    transition: transform 0.3s ease;
-    color: var(--clr-green);
-}
-
-.faq-item.active .faq-q i {
-    transform: rotate(180deg);
-}
-
-.faq-item.active {
-    border-color: rgba(49, 168, 168, 0.5);
-}
-
-.faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, margin-top 0.4s ease;
-    color: var(--clr-gray);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.faq-item.active .faq-a {
-    max-height: 500px;
-    margin-top: 1rem;
-}
 
 /* ==========================================================================
-   AUTORIDADE / MOTIVAÇÃO
+   AUTORIDADE / MOTIVAÃ‡ÃƒO
    ========================================================================== */
 .auth-section p,
 .why-section p {
@@ -2238,7 +2218,7 @@ img {
 }
 
 /* ==========================================================================
-   HABILIDADES / TRANSFORMAÇÃO
+   HABILIDADES / TRANSFORMAÃ‡ÃƒO
    ========================================================================== */
 .transformation-section {
     padding: 6rem 0;
@@ -2305,7 +2285,7 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER - BOTÕES E MOBILE
+   TESTIMONIALS SLIDER - BOTÃ•ES E MOBILE
    ========================================================================== */
 .testi-slide.hidden {
     opacity: 0;
