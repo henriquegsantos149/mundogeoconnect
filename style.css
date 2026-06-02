@@ -796,16 +796,7 @@ section {
 }
 
 
-.prof-img::after {
-    content: '';
-    position: absolute;
-    top: -5px; left: -5px; right: -5px; bottom: -5px;
-    border: 1px dashed var(--clr-green);
-    border-radius: 50%;
-    animation: spin 10s linear infinite;
-}
 
-@keyframes spin { 100% { transform: rotate(360deg); } }
 
 /* FAQ */
 .faq-list {
@@ -1749,15 +1740,17 @@ img {
     gap: 1rem;
 }
 .faq-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-brand);
     padding: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
 }
 .faq-item:hover {
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(49, 168, 168, 0.3);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 .faq-q {
     font-weight: 600;
@@ -1765,10 +1758,11 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: var(--clr-light);
+    color: var(--clr-dark-1);
 }
 .faq-q i {
     transition: transform 0.3s ease;
+    color: var(--clr-green);
 }
 .faq-item.active .faq-q i {
     transform: rotate(180deg);
@@ -1780,201 +1774,7 @@ img {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease-out, margin-top 0.4s ease;
-    color: rgba(255, 255, 255, 0.7);
-.testi-slide.hidden {
-    opacity: 0;
-    z-index: 1;
-    transform: translateX(0) scale(0.5);
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-}
-
-.slider-btn:hover {
-    background: var(--gradient-brand);
-    color: var(--clr-black);
-    border-color: transparent;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.prev-btn {
-    left: 10px;
-}
-
-.next-btn {
-    right: 10px;
-}
-
-@media (max-width: 768px) {
-    .testi-slide.prev {
-        transform: translateX(-25%) scale(0.85);
-        opacity: 0.3;
-    }
-    .testi-slide.next {
-        transform: translateX(25%) scale(0.85);
-        opacity: 0.3;
-    }
-    .slider-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
-    }
-    .testimonials-slider {
-        height: 60vh;
-        min-height: 400px;
-    }
-    .testi-slide {
-        width: 90%;
-    }
-}
-
-/* ==========================================================================
-   PROGRAMMATIC CONTENT (ACCORDION)
-   ========================================================================== */
-.accordion-list {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.accordion-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-brand);
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-.accordion-header {
-    width: 100%;
-    background: transparent;
-    border: none;
-    padding: 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    color: var(--clr-light);
-    text-align: left;
-    transition: background 0.3s ease;
-}
-.accordion-header:hover {
-    background: rgba(255, 255, 255, 0.05);
-}
-.acc-header-left {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-}
-.acc-number {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--clr-light);
-}
-.accordion-header h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin: 0;
-    color: var(--clr-light);
-}
-.acc-icon {
-    font-size: 1.25rem;
-    color: var(--clr-light);
-    transition: transform 0.3s ease;
-}
-.accordion-item.active .acc-icon {
-    transform: rotate(180deg);
-}
-.accordion-item.active {
-    border-color: rgba(49, 168, 168, 0.5); /* var(--clr-secondary) */
-}
-.accordion-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out;
-}
-.accordion-item.active .accordion-content {
-    max-height: 1500px; /* enough to show content */
-}
-.acc-inner {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.acc-block p {
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.8);
-    margin-top: 0.5rem;
-}
-
-/* ==========================================================================
-   FAQ
-   ========================================================================== */
-.faq-list {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-.faq-item {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-brand);
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.faq-item:hover {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-.faq-q {
-    font-weight: 600;
-    font-size: 1.1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: var(--clr-light);
-}
-.faq-q i {
-    transition: transform 0.3s ease;
-}
-.faq-item.active .faq-q i {
-    transform: rotate(180deg);
-}
-.faq-item.active {
-    border-color: rgba(49, 168, 168, 0.5);
-}
-.faq-a {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-out, margin-top 0.4s ease;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--clr-gray);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -2044,6 +1844,7 @@ img {
    ========================================================================== */
 .transformation-section {
     padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 .skills-grid {
     display: grid;
@@ -2062,7 +1863,7 @@ img {
     align-items: flex-start;
 }
 .skill-card:hover {
-    border-color: rgba(49, 168, 168, 0.5);
+    border-color: rgba(49, 168, 168, 0.5); /* var(--clr-secondary) */
     transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.04);
 }
