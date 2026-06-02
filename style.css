@@ -1536,6 +1536,7 @@ img {
     position: absolute;
     width: 650px;
     max-width: 85%;
+    background: #ffffff;
     transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
     opacity: 0;
     pointer-events: none;
@@ -1786,12 +1787,15 @@ img {
 /* ==========================================================================
    AUTORIDADE / MOTIVAÇÃO
    ========================================================================== */
+.auth-section p, .why-section p {
+    color: var(--clr-dark-1);
+}
 .auth-text {
     text-align: center;
 }
 .auth-text p {
     font-size: 1.1rem;
-    color: rgba(255,255,255,0.8);
+    color: var(--clr-dark-1);
     margin-bottom: 1rem;
 }
 .auth-badges {
@@ -1804,7 +1808,7 @@ img {
 .highlight-p {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--clr-light);
+    color: var(--clr-dark-1);
     margin-bottom: 1.5rem;
     line-height: 1.4;
 }
@@ -1827,10 +1831,10 @@ img {
 }
 .comparison-list li span {
     font-size: 1.05rem;
-    color: rgba(255,255,255,0.8);
+    color: var(--clr-dark-1);
 }
 .comparison-list li strong {
-    color: var(--clr-light);
+    color: var(--clr-green-1);
 }
 .event-logo-img {
     width: 100%;
@@ -1896,4 +1900,71 @@ img {
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
     margin: 0;
+}
+
+/* ==========================================================================
+   TESTIMONIALS SLIDER - BOTÕES E MOBILE
+   ========================================================================== */
+.testi-slide.hidden {
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(0) scale(0.5);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.slider-btn:hover {
+    background: var(--clr-green);
+    color: var(--clr-dark-1);
+    border-color: transparent;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .testi-slide.prev {
+        transform: translateX(-25%) scale(0.85);
+        opacity: 0.3;
+    }
+    .testi-slide.next {
+        transform: translateX(25%) scale(0.85);
+        opacity: 0.3;
+    }
+    .slider-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .testimonials-slider {
+        height: 60vh;
+        min-height: 400px;
+    }
+    .testi-slide {
+        width: 90%;
+    }
 }
