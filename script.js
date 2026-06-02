@@ -55,6 +55,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // 1.5 Curriculum Accordion Functionality
+    const curriculumItems = document.querySelectorAll('.accordion-item');
+    
+    curriculumItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all others
+                curriculumItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle clicked one
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    });
+
     // 2. Header Style on Scroll
     const header = document.querySelector('.main-header');
     
@@ -107,4 +129,54 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(styleObj);
+
+    // 4. Testimonials Slider Logic
+    const slides = document.querySelectorAll('.testi-slide');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (slides.length > 0 && prevBtn && nextBtn) {
+        let currentIndex = 0;
+        
+        function updateSlider() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next', 'hidden');
+                
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                } else if (index === currentIndex - 1 || (currentIndex === 0 && index === slides.length - 1)) {
+                    slide.classList.add('prev');
+                } else if (index === currentIndex + 1 || (currentIndex === slides.length - 1 && index === 0)) {
+                    slide.classList.add('next');
+                } else {
+                    slide.classList.add('hidden');
+                }
+            });
+        }
+        
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateSlider();
+        });
+        
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateSlider();
+        });
+        
+        slides.forEach((slide) => {
+            slide.addEventListener('click', () => {
+                if (slide.classList.contains('prev')) {
+                    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                    updateSlider();
+                } else if (slide.classList.contains('next')) {
+                    currentIndex = (currentIndex + 1) % slides.length;
+                    updateSlider();
+                }
+            });
+        });
+        
+        // Initialize
+        updateSlider();
+    }
 });
