@@ -1,5 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 0. Mobile Menu Toggle (Priority)
+// 0. Mobile Menu Toggle (Priority)
     const menuToggle = document.querySelector('.menu-toggle');
     const mainNav = document.querySelector('.main-nav');
     
@@ -177,4 +176,3 @@ document.addEventListener('DOMContentLoaded', () => {
         // Initialize
         updateSlider();
     }
-});
