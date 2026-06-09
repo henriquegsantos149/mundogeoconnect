@@ -2920,3 +2920,38 @@ img {
     margin: 1.5rem 0 1rem 0 !important; /* Adjusted spacing */
 }
 
+
+.popup-texture {
+    background-image: radial-gradient(rgba(0, 240, 140, 0.03) 2px, transparent 2px), radial-gradient(rgba(0, 240, 140, 0.03) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+.popup-brand {
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+.popup-brand::after {
+    content: "MundoGEO";
+    display: block;
+    font-size: 0.7rem;
+    color: var(--clr-primary);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-top: -5px;
+}
+
+
+.popup-close {
+    font-size: 2rem !important;
+    top: 15px !important;
+    right: 20px !important;
+    padding: 10px !important;
+    background: rgba(0,0,0,0.2) !important;
+    border-radius: 50% !important;
+}
+.popup-close:hover {
+    background: rgba(0,240,140,0.2) !important;
+}
+

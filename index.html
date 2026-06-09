@@ -1028,21 +1028,24 @@
 
     <!-- POP-UP CUPOM -->
     <div class="popup-overlay" id="cupom-popup">
-        <div class="popup-box shape-brand layer-2 card-overlay text-center">
+        <div class="popup-box shape-brand layer-2 card-overlay text-center popup-texture">
             <button class="popup-close" id="close-popup"><i class="ph ph-x"></i></button>
-            <div class="popup-icon"><i class="ph ph-ticket text-highlight"></i></div>
-            <h2 class="popup-title">Você ganhou um <span class="popup-title-highlight">cupom!</span></h2>
-            <p class="popup-desc" style="margin-bottom: 1.5rem;">Aproveite <strong id="popup-desconto" class="popup-discount-badge">70%</strong> de desconto exclusivo para participantes do MundoGEO. Essa oferta é válida apenas hoje.</p>
-            
-            <div class="popup-coupon" id="popup-cupom">MUNDOGEO70</div>
-            <p class="popup-note">* O cupom será aplicado automaticamente no link do checkout</p>
-
-            <div class="popup-timer">
-                <span>Válido por</span> <strong id="countdown-popup">00:00:00</strong>
+            <div class="popup-brand">
+                <i class="ph ph-ticket text-highlight popup-icon"></i>
             </div>
             
-            <a href="#" id="popup-link" class="btn btn-primary btn-full" target="_blank" style="margin-top: 1rem;">
-                Aproveite o desconto! <i class="ph ph-arrow-right"></i>
+            <h2 class="popup-title">PARABÉNS! VOCÊ GANHOU <span class="popup-title-highlight" id="popup-desconto">70%</span> DE DESCONTO EXCLUSIVO!</h2>
+            <p class="popup-desc" style="margin-bottom: 1.5rem;">Aproveite esta oferta imperdível nos ingressos e acesso à plataforma MundoGEO.</p>
+            
+            <div class="popup-timer">
+                <span style="font-weight: bold; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Esta oferta expira em:</span> 
+                <strong id="countdown-popup">00:00:00</strong>
+            </div>
+
+            <p class="popup-note" style="margin-bottom: 1.5rem; font-size: 0.9rem;">O desconto será aplicado automaticamente ao clicar abaixo.</p>
+            
+            <a href="#" id="popup-link" class="btn btn-primary btn-full" style="margin-top: 1rem; font-weight: 800; padding: 1rem;">
+                GARANTIR MEUS <span id="popup-btn-desconto">70%</span> DE DESCONTO AGORA!
             </a>
         </div>
     </div>

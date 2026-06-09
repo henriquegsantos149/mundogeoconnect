@@ -181,12 +181,12 @@
 // MUNDOGEO DYNAMIC PRICING & COUNTDOWN
 // ==========================================
 (function() {
-    // Configurações dos dias
+    // Configuraï¿½ï¿½es dos dias
     const pricingRules = [
         {
             dateString: "2026-06-16",
             priceStr: "De 12x de 797,01 por 12x R$ 239,10",
-            discountStr: "70% de desconto válido até 23:59",
+            discountStr: "70% de desconto vï¿½lido atï¿½ 23:59",
             discountNum: "70%",
             coupon: "MUNDOGEO70",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO70"
@@ -194,7 +194,7 @@
         {
             dateString: "2026-06-17",
             priceStr: "De 12x de 797,01 por 12x R$ 318,80",
-            discountStr: "60% de desconto válido até 23:59",
+            discountStr: "60% de desconto vï¿½lido atï¿½ 23:59",
             discountNum: "60%",
             coupon: "MUNDOGEO60",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO60"
@@ -202,7 +202,7 @@
         {
             dateString: "2026-06-18",
             priceStr: "De 12x de 797,01 por 12x R$ 398,50",
-            discountStr: "50% de desconto válido até 23:59",
+            discountStr: "50% de desconto vï¿½lido atï¿½ 23:59",
             discountNum: "50%",
             coupon: "MUNDOGEO50",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO50"
@@ -228,7 +228,7 @@
         // Se for dia 18 ou depois
         if (todayStr >= "2026-06-18") return pricingRules[2];
         
-        // Padrão (Dia 16 ou antes)
+        // Padrï¿½o (Dia 16 ou antes)
         return pricingRules[0];
     }
 
@@ -244,18 +244,16 @@
 
         // Popup
         const popupDesconto = document.getElementById("popup-desconto");
-        const popupCupom = document.getElementById("popup-cupom");
-        const popupLink = document.getElementById("popup-link");
+        const popupBtnDesconto = document.getElementById("popup-btn-desconto");
 
         if (popupDesconto) popupDesconto.innerText = rule.discountNum;
-        if (popupCupom) popupCupom.innerText = rule.coupon;
-        if (popupLink) popupLink.href = rule.link;
+        if (popupBtnDesconto) popupBtnDesconto.innerText = rule.discountNum;
     }
 
     function startCountdown() {
         function tick() {
             const spTime = getSaoPauloDate();
-            // Próxima meia-noite (23:59:59)
+            // Prï¿½xima meia-noite (23:59:59)
             const endOfDay = new Date(spTime);
             endOfDay.setHours(23, 59, 59, 999);
 
@@ -292,32 +290,26 @@
     const popupLink = document.getElementById("popup-link");
 
     if (popup) {
-        // Exibir se não foi fechado nesta sessão
-        if (!sessionStorage.getItem("mundogeoPopupClosed")) {
-            setTimeout(() => {
-                popup.classList.add("active");
-            }, 1000); // Exibir 1 segundo após carregar
-        }
+        setTimeout(() => {
+            popup.classList.add("active");
+        }, 1000); // Exibir 1 segundo apï¿½s carregar
 
         const closePopup = (e) => {
             if (e) e.preventDefault();
             popup.classList.remove("active");
-            sessionStorage.setItem("mundogeoPopupClosed", "true");
         };
 
         if (closeBtn) closeBtn.addEventListener("click", closePopup);
         
-        // Clicar no botão do popup deve fechar o popup além de abrir o checkout (checkout já abre _blank pelo HTML)
-        if (popupLink) popupLink.addEventListener("click", () => {
-            closePopup();
-        });
+        if (popupLink) {
+            popupLink.addEventListener("click", (e) => {
+                closePopup(e);
+            });
+        }
 
-        // Fechar clicando fora
         popup.addEventListener("click", (e) => {
             if (e.target === popup) closePopup();
         });
     }
 
-    // Scroll Smooth dos botões matricule-se estão via CSS/HTML normal (âncoras).
 })();
-
