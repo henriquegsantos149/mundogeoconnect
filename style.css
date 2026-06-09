@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     /* Colors */
     --clr-black: #010404;
     --clr-dark-1: #080A0A;
@@ -807,7 +807,7 @@ section {
 }
 
 .custom-bullets li::before {
-    content: '→';
+    content: 'â†’';
     position: absolute;
     left: 0;
     color: var(--clr-green);
@@ -1660,17 +1660,17 @@ section {
     }
 }
 
-/* Otimização de Imagens Globais */
+/* OtimizaÃ§Ã£o de Imagens Globais */
 img {
     max-width: 100%;
     height: auto;
 }
 
 /* ==========================================================================
-   NOVAS SEÇÕES (APLICAÇÕES, PÚBLICO ALVO, CURSO, DEPOIMENTOS)
+   NOVAS SEÃ‡Ã•ES (APLICAÃ‡Ã•ES, PÃšBLICO ALVO, CURSO, DEPOIMENTOS)
    ========================================================================== */
 
-/* APLICAÇÕES PRÁTICAS */
+/* APLICAÃ‡Ã•ES PRÃTICAS */
 .practical-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1738,7 +1738,7 @@ img {
     line-height: 1.6;
 }
 
-/* PÚBLICO ALVO */
+/* PÃšBLICO ALVO */
 .target-section {
     padding: 6rem 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -2090,7 +2090,7 @@ img {
     border-radius: 4px;
 }
 
-/* MODIFICAÇÕES RESPONSIVAS */
+/* MODIFICAÃ‡Ã•ES RESPONSIVAS */
 @media (max-width: 1024px) {
     .course-info-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -2409,7 +2409,7 @@ img {
 
 
 /* ==========================================================================
-   AUTORIDADE / MOTIVAÇÃO
+   AUTORIDADE / MOTIVAÃ‡ÃƒO
    ========================================================================== */
 .auth-section p,
 .why-section p {
@@ -2480,7 +2480,7 @@ img {
 }
 
 /* ==========================================================================
-   HABILIDADES / TRANSFORMAÇÃO
+   HABILIDADES / TRANSFORMAÃ‡ÃƒO
    ========================================================================== */
 .transformation-section {
     padding: 6rem 0;
@@ -2547,7 +2547,7 @@ img {
 }
 
 /* ==========================================================================
-   TESTIMONIALS SLIDER - BOTÕES E MOBILE
+   TESTIMONIALS SLIDER - BOTÃ•ES E MOBILE
    ========================================================================== */
 .testi-slide.hidden {
     opacity: 0;
@@ -2695,7 +2695,7 @@ img {
    OFERTA & POPUP (MUNDOGEO)
    ========================================== */
 
-/* Se��o de Oferta */
+/* Seção de Oferta */
 .pricing-section {
     padding: 6rem 0;
     position: relative;
@@ -2716,7 +2716,7 @@ img {
     top: -20px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--brand-gradient);
+    background: var(--gradient-brand);
     color: var(--clr-dark-gray);
     padding: 0.5rem 1.5rem;
     border-radius: 50px;
@@ -3028,5 +3028,32 @@ img {
     .popup-title { font-size: 1.8rem; }
     .popup-timer-value { font-size: 2rem; }
     .popup-timer-box { width: 95%; padding: 1rem; }
+}
+
+
+.pricing-main-title {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    font-weight: 900;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.6;
+    font-size: 1.2rem;
+    color: var(--clr-light);
+    margin-right: 0.5rem;
+    font-weight: normal;
+}
+
+.new-price {
+    color: var(--clr-primary);
+    font-size: 2rem;
+    font-weight: 800;
 }
 

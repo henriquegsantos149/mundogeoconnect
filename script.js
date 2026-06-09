@@ -181,28 +181,28 @@
 // MUNDOGEO DYNAMIC PRICING & COUNTDOWN
 // ==========================================
 (function() {
-    // Configura��es dos dias
+    // Configurações dos dias
     const pricingRules = [
         {
             dateString: "2026-06-16",
-            priceStr: "De 12x de 797,01 por 12x R$ 239,10",
-            discountStr: "70% de desconto v�lido at� 23:59",
+            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 239,10</span>",
+            discountStr: "70% de desconto válido até 23:59",
             discountNum: "70%",
             coupon: "MUNDOGEO70",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO70"
         },
         {
             dateString: "2026-06-17",
-            priceStr: "De 12x de 797,01 por 12x R$ 318,80",
-            discountStr: "60% de desconto v�lido at� 23:59",
+            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 318,80</span>",
+            discountStr: "60% de desconto válido até 23:59",
             discountNum: "60%",
             coupon: "MUNDOGEO60",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO60"
         },
         {
             dateString: "2026-06-18",
-            priceStr: "De 12x de 797,01 por 12x R$ 398,50",
-            discountStr: "50% de desconto v�lido at� 23:59",
+            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 398,50</span>",
+            discountStr: "50% de desconto válido até 23:59",
             discountNum: "50%",
             coupon: "MUNDOGEO50",
             link: "https://pay.voompcreators.com.br/4664/?cupom=MUNDOGEO50"
@@ -228,7 +228,7 @@
         // Se for dia 18 ou depois
         if (todayStr >= "2026-06-18") return pricingRules[2];
         
-        // Padr�o (Dia 16 ou antes)
+        // Padrão (Dia 16 ou antes)
         return pricingRules[0];
     }
 
@@ -238,7 +238,7 @@
         const ofertaDesconto = document.getElementById("oferta-desconto");
         const ofertaLink = document.getElementById("oferta-link");
         
-        if (ofertaTexto) ofertaTexto.innerText = rule.priceStr;
+        if (ofertaTexto) ofertaTexto.innerHTML = rule.priceStr;
         if (ofertaDesconto) ofertaDesconto.innerText = rule.discountStr;
         if (ofertaLink) ofertaLink.href = rule.link;
 
@@ -253,7 +253,7 @@
     function startCountdown() {
         function tick() {
             const spTime = getSaoPauloDate();
-            // Pr�xima meia-noite (23:59:59)
+            // Próxima meia-noite (23:59:59)
             const endOfDay = new Date(spTime);
             endOfDay.setHours(23, 59, 59, 999);
 
@@ -292,7 +292,7 @@
     if (popup) {
         setTimeout(() => {
             popup.classList.add("active");
-        }, 1000); // Exibir 1 segundo ap�s carregar
+        }, 1000); // Exibir 1 segundo após carregar
 
         const closePopup = (e) => {
             if (e) e.preventDefault();
