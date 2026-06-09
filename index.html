@@ -917,8 +917,29 @@
     </section>
 
 
-
-    <!-- FAQ -->
+    <!-- OFERTA MUNDOGEO -->
+    <section class="pricing-section" id="oferta">
+        <div class="container text-center max-narrow">
+            <h2 class="section-title text-highlight">DESCONTO EXCLUSIVO PARA PARTICIPANTES DO MUNDOGEO</h2>
+            
+            <div class="pricing-card shape-brand layer-1 card-overlay">
+                <div class="timer-badge">
+                    <i class="ph ph-clock-countdown"></i> Válido por <span id="countdown-oferta">00:00:00</span>
+                </div>
+                
+                <h3 class="pricing-title">Pós-Graduação GGSR</h3>
+                <p id="oferta-texto" class="pricing-value">
+                    <!-- Preço será injetado pelo JS -->
+                    De 12x de 797,01 por 12x R$ 239,10
+                </p>
+                <div class="pricing-discount-tag" id="oferta-desconto">70% de desconto válido até 23:59</div>
+                
+                <a href="#" id="oferta-link" class="btn btn-primary btn-full" target="_blank" style="margin-top: 2rem;">
+                    Aproveite o desconto! <i class="ph ph-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
     <section class="faq-section section-light" id="faq">
         <div class="container max-narrow">
             <h2 class="section-title text-center">Perguntas <span class="text-highlight">frequentes</span></h2>
@@ -1000,10 +1021,31 @@
         </div>
     </footer>
 
-    <!-- Botão Flutuante Suporte -->
-    <a href="https://wa.link/seulinkdesuporte" class="floating-btn shape-brand-alt" target="_blank">
-        <i class="ph ph-chat-circle-text"></i> MATRICULE-SE AGORA
+    <!-- FLOATING CTA -->
+    <a href="#oferta" class="floating-btn shape-brand-alt">
+        <i class="ph ph-graduation-cap"></i> MATRICULE-SE AGORA
     </a>
+
+    <!-- POP-UP CUPOM -->
+    <div class="popup-overlay" id="cupom-popup">
+        <div class="popup-box shape-brand layer-2 card-overlay text-center">
+            <button class="popup-close" id="close-popup"><i class="ph ph-x"></i></button>
+            <div class="popup-icon"><i class="ph ph-ticket text-highlight"></i></div>
+            <h2 class="section-title">Você ganhou um <span class="text-highlight">cupom!</span></h2>
+            <p>Aproveite <strong id="popup-desconto" class="text-highlight">70%</strong> de desconto exclusivo para participantes do MundoGEO. Essa oferta é válida apenas hoje.</p>
+            
+            <div class="popup-timer">
+                <span>Válido por</span> <strong id="countdown-popup">00:00:00</strong>
+            </div>
+
+            <div class="popup-coupon" id="popup-cupom">MUNDOGEO70</div>
+            <p style="font-size: 0.8rem; opacity: 0.7; margin-bottom: 1.5rem;">* O cupom será aplicado automaticamente no link do checkout</p>
+            
+            <a href="#" id="popup-link" class="btn btn-primary btn-full" target="_blank">
+                Aproveite o desconto! <i class="ph ph-arrow-right"></i>
+            </a>
+        </div>
+    </div>
 
     <script type="module" src="/script.js"></script>
 </body>
