@@ -2891,3 +2891,32 @@ img {
     .popup-icon { font-size: 2.5rem !important; }
 }
 
+
+.popup-title-highlight {
+    color: var(--clr-primary);
+    text-transform: uppercase;
+}
+
+.popup-discount-badge {
+    background: var(--gradient-brand);
+    color: var(--clr-black);
+    padding: 0.1rem 0.6rem;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0.2rem;
+    box-shadow: 0 0 15px rgba(0, 240, 140, 0.4);
+    font-weight: 900;
+}
+
+.popup-coupon {
+    font-size: 1.8rem !important; /* Increased font size */
+    padding: 0.8rem 1.5rem !important; /* Increased padding */
+    margin-bottom: 0.8rem !important; /* Increased spacing */
+}
+
+.popup-timer {
+    margin: 1.5rem 0 1rem 0 !important; /* Adjusted spacing */
+}
+
