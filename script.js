@@ -185,7 +185,11 @@
     const pricingRules = [
         {
             dateString: "2026-06-16",
-            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 239,10</span>",
+            priceHTML: `
+                <span class='old-price'>De 12x de R$ 797,01</span>
+                <span class='new-price'>por 12x R$ 239,10</span>
+                <span class='cash-price'>ou <strong>R$ 2.391,00</strong> à vista</span>
+            `,
             discountStr: "70% de desconto válido até 23:59",
             discountNum: "70%",
             coupon: "MUNDOGEO70",
@@ -193,7 +197,11 @@
         },
         {
             dateString: "2026-06-17",
-            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 318,80</span>",
+            priceHTML: `
+                <span class='old-price'>De 12x de R$ 797,01</span>
+                <span class='new-price'>por 12x R$ 318,80</span>
+                <span class='cash-price'>ou <strong>R$ 3.188,00</strong> à vista</span>
+            `,
             discountStr: "60% de desconto válido até 23:59",
             discountNum: "60%",
             coupon: "MUNDOGEO60",
@@ -201,7 +209,11 @@
         },
         {
             dateString: "2026-06-18",
-            priceStr: "<span class='old-price'>12x de R$ 797,01</span> <span class='new-price'>por 12x R$ 398,50</span>",
+            priceHTML: `
+                <span class='old-price'>De 12x de R$ 797,01</span>
+                <span class='new-price'>por 12x R$ 398,50</span>
+                <span class='cash-price'>ou <strong>R$ 3.985,00</strong> à vista</span>
+            `,
             discountStr: "50% de desconto válido até 23:59",
             discountNum: "50%",
             coupon: "MUNDOGEO50",
@@ -210,6 +222,13 @@
     ];
 
     function getSaoPauloDate() {
+        // Suporte a simulação via URL: ?dia=16, ?dia=17 ou ?dia=18
+        const params = new URLSearchParams(window.location.search);
+        const diaParam = params.get("dia");
+        if (diaParam) {
+            const fakeDate = new Date(`2026-06-${diaParam.padStart(2, "0")}T12:00:00`);
+            if (!isNaN(fakeDate)) return fakeDate;
+        }
         const now = new Date();
         const options = { timeZone: "America/Sao_Paulo" };
         const spTime = new Date(now.toLocaleString("en-US", options));
@@ -238,7 +257,7 @@
         const ofertaDesconto = document.getElementById("oferta-desconto");
         const ofertaLink = document.getElementById("oferta-link");
         
-        if (ofertaTexto) ofertaTexto.innerHTML = rule.priceStr;
+        if (ofertaTexto) ofertaTexto.innerHTML = rule.priceHTML;
         if (ofertaDesconto) ofertaDesconto.innerText = rule.discountStr;
         if (ofertaLink) ofertaLink.href = rule.link;
 

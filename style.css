@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     /* Colors */
     --clr-black: #010404;
     --clr-dark-1: #080A0A;
@@ -2736,10 +2736,14 @@ img {
 }
 
 .pricing-value {
-    font-size: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
     font-weight: 700;
     color: var(--clr-primary);
     margin-bottom: 0.5rem;
+    line-height: 1.2;
 }
 
 .pricing-discount-tag {
@@ -3044,16 +3048,31 @@ img {
 
 .old-price {
     text-decoration: line-through;
-    opacity: 0.6;
-    font-size: 1.2rem;
+    opacity: 0.55;
+    font-size: 1.1rem;
     color: var(--clr-light);
-    margin-right: 0.5rem;
     font-weight: normal;
+    letter-spacing: 0.01em;
 }
 
 .new-price {
     color: var(--clr-primary);
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2.8rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-shadow: 0 0 20px rgba(0, 240, 140, 0.35);
 }
 
+.cash-price {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 400;
+    margin-top: 0.2rem;
+    letter-spacing: 0.01em;
+}
+
+.cash-price strong {
+    color: var(--clr-light);
+    font-weight: 700;
+}
