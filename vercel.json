@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://www.ambientalpro.com.br/posggsr",
+      "destination": "https://www.ambientalpro.com.br",
       "permanent": true
     }
   ],
